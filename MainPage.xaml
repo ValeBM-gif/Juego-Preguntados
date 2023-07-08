@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TDMPW_412_3P_PR01.MainPage"
+             xmlns:controls="clr-namespace:Microsoft.Maui.Controls;assembly=Microsoft.Maui.Controls">
+
+        <Grid x:Name="background" >
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Offset="0" Color="#438cbf"/>
+                        <GradientStop Offset="0.31" Color="#55aec7"/>
+                        <GradientStop Offset="0.71" Color="#7ccdb7"/>
+                        <GradientStop Offset="1" Color="#bac995"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+
+            <Grid Grid.Row="0" RowSpacing="35" HorizontalOptions="Center" VerticalOptions="Center" RowDefinitions=".2*,.1*,.1*,.3*, .2*,.1*,.1*">
+            <Label
+                Text="PREGUNTADOS"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="92"
+                HorizontalOptions="Center"
+                FontFamily="Olive Days"
+                TextColor="White"
+                Margin="0,0,0,0"
+                Grid.Row="0"/>
+
+                    <HorizontalStackLayout Grid.Row="1" Grid.RowSpan="2" HorizontalOptions="Start" Clip="True">
+                    <Label
+                    Text="Puntos: "
+                    SemanticProperties.HeadingLevel="Level2"
+                    FontSize="38"
+                    TextColor="White"
+                    FontFamily="Simply Rounded"/>
+
+                    <Label
+                    x:Name="lblPuntos"
+                    Text="{Binding Puntos}"
+                    SemanticProperties.HeadingLevel="Level2"
+                    FontSize="38"
+                    HorizontalTextAlignment="Center"
+                    TextColor="White"
+                    FontFamily="Simply Rounded"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout Grid.Row="1" Grid.RowSpan="2" HorizontalOptions="End" Clip="True">
+                        <Label
+                        Text="Errores: "
+                        SemanticProperties.HeadingLevel="Level2"
+                        FontSize="38"
+                        TextColor="White"
+                        FontFamily="Simply Rounded"/>
+
+                        <Label
+                        x:Name="lblErrores"
+                        Text="{Binding Errores}"
+                        SemanticProperties.HeadingLevel="Level2"
+                        FontSize="38"
+                        HorizontalTextAlignment="Center"
+                        TextColor="White"
+                        FontFamily="Simply Rounded"/>
+                    </HorizontalStackLayout>
+                
+
+                <Image
+                Source="{Binding ImgPregunta}"
+                HeightRequest="400"
+                HorizontalOptions="Center"
+                Grid.Row="3"/>
+
+                <Label
+                Text="{Binding TextoPregunta}"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="28"
+                HorizontalOptions="Center"
+                FontFamily="Simply Rounded"
+                TextColor="White"
+                HorizontalTextAlignment="Center"
+                Grid.Row="4"/>
+
+                <Entry
+                x:Name="txtRespuesta"
+                WidthRequest="600"
+                HorizontalOptions="Center"
+                IsVisible="False"
+                FontSize="28"
+                TextColor="White"
+                FontFamily="Simply Rounded"
+                Grid.Row="5"/>
+
+                <Button
+                x:Name="btnPrincipal"
+                Text="{Binding TextoBotonPrincipal}"
+                HorizontalOptions="Center"
+                FontFamily="Simply Rounded"
+                FontSize="25"
+                Grid.Row="6"
+                IsVisible="false"
+                TextColor="#4291c1"
+                BackgroundColor="White"
+                Clicked="btnPrincipal_Clicked"/>
+
+                
+            </Grid>
+                
+            <Image
+                x:Name="img1"
+                Source="pasto3.png"
+                WidthRequest="1400"
+                HeightRequest="400"
+                HorizontalOptions="Start"
+                VerticalOptions="End"
+                Aspect="Fill"
+                Opacity="1"
+                Margin="0,0,0,-40"
+                Grid.Row="6"/>
+
+                <Image
+                x:Name="img2"
+                Source="mountain.png"
+                WidthRequest="300"
+                HeightRequest="400"
+                HorizontalOptions="Start"
+                VerticalOptions="End"
+                Aspect="Center"
+                Opacity="1"
+                Grid.Row="6"/>
+
+        <Image
+                x:Name="img3"
+                Source="personajes3.png"
+                WidthRequest="300"
+                HeightRequest="400"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                Aspect="AspectFit"
+                Margin="0,0,70,-80"
+                Opacity="1"
+                Grid.Row="6"/>
+
+        <Button
+                x:Name="btnInicio"
+                Text="{Binding TextoBotonInicio}"
+                HorizontalOptions="Center"
+                FontFamily="Simply Rounded"
+                FontSize="25"
+                Grid.Row="6"
+                IsVisible="true"
+                TextColor="#4291c1"
+                BackgroundColor="White"
+                Margin="0,0,0,80"
+                HeightRequest="50"
+                VerticalOptions="End"
+                Clicked="btnInicio_Clicked"/>
+        </Grid>
+</ContentPage>
+
